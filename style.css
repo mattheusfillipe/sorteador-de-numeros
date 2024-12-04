@@ -162,6 +162,7 @@ body {
                     & label {
                         font: var(--label-medium);
                         color: var(--content-secondary);
+                        transition: color .3s ease-in-out;
 
                         &:hover {
                             color: var(--content-brand);
@@ -182,7 +183,7 @@ body {
 
                         &:hover {
                             background:
-                                linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+                                linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box,
                                 var(--gradient-border) border-box;
                         }
 
@@ -244,7 +245,7 @@ body {
                     width: 14px;
                     border-radius: 50%;
                     left: 4px;
-                    bottom: 2.5px;
+                    bottom: 3px;
                     background-color: var(--content-primary);
                     transition: 0.4s;
                 }
@@ -278,7 +279,7 @@ body {
 
                 &:hover {
                     background:
-                        linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box,
+                        linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
                         var(--gradient-border) border-box;
                 }
             }
@@ -320,6 +321,7 @@ body {
         }
 
         & .questions-mobile {
+            margin-top: 1.5rem;
             max-width: 380px;
             display: flex;
             flex-direction: column;
