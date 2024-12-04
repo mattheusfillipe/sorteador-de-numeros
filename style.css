@@ -130,6 +130,61 @@ body {
         max-width: 482px;
         box-sizing: border-box;
 
+        & .results {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            & h2 {
+                font: var(--label-medium);
+                color: var(--content-primary);
+            }
+
+            & span {
+                display: flex;
+                font: var(--overline);
+                color: var(--content-secondary);
+                margin-top: .5rem;
+            }
+
+            & p {
+                color: var(--content-brand);
+                font: 800 3rem/1.5 'Roboto Mono', monospace;
+                margin-top: 2.5rem;
+                text-align: center;
+            }
+
+            & .btn-reset {
+                all: unset;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+                background-color: var(--bg-tertiary);
+                border-radius: .5rem;
+                width: 350px;
+                font: var(--label-small);
+                color: var(--content-primary);
+                padding: 1rem 1rem;
+                border: 2px solid transparent;
+                cursor: pointer;
+                margin-top: 2.5rem;
+
+                & span {
+                    margin: 0;
+                }
+
+                &:hover {
+                    background:
+                        linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+                        var(--gradient-border) border-box;
+                }
+            }
+        }
+
         & .title-wrap {
             display: flex;
             flex-direction: column;
@@ -190,7 +245,7 @@ body {
                         &:focus {
                             border: 2px solid transparent;
                             background:
-                                linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+                                linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box,
                                 var(--gradient-border) border-box;
                         }
                     }
