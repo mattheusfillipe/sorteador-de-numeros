@@ -78,6 +78,7 @@ body {
     & .app-info {
         & header {
             max-width: 510px;
+            min-width: 510px;
             margin-bottom: 2.25rem;
 
             & p {
@@ -364,6 +365,7 @@ body {
         & .app-info {
             & header {
                 max-width: 300px;
+                min-width: 300px;
                 margin-bottom: 1rem;
                 & h1 {
                     font: var(--display-medium);
