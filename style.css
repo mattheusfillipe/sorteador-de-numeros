@@ -59,10 +59,14 @@ body {
 
 .container {
     margin-left: 7.5rem;
+    display: flex;
+    align-items: center;
+    gap: 6.75rem;
 
-    .app-info {
+    & .app-info {
         header {
             max-width: 510px;
+            min-width: 510px;
             margin-bottom: 2.25rem;
 
             p {
@@ -82,32 +86,189 @@ body {
 
         .questions {
             max-width: 380px;
+            min-width: 380px;
             display: flex;
             flex-direction: column;
             gap: 2.25rem;
 
             & .question-item {
                 display: flex;
-                flex-direction: column;
             }
 
             & .question-title {
-                font: var(--paragraph-medium);
-                color: var(--content-brand);
-                display: flex;
-                align-items: center;
-                gap: .5rem;
-
                 & img {
                     width: 1.25rem;
                     height: 1.25rem;
+                    margin-right: .5rem;
                 }
             }
 
+            & .question {
+                font: var(--paragraph-medium);
+                color: var(--content-brand);
+            }
+
             & .answer {
-                margin-left: 2rem;
                 font: var(--paragraph-small);
                 color: var(--content-secondary);
+            }
+        }
+    }
+
+    & .app-form {
+        min-width: 482px;
+        max-width: 482px;
+
+        & .title-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: .125rem;
+            margin-bottom: 2.5rem;
+
+            & .form-title {
+                font: var(--label-medium);
+                color: var(--content-primary);
+            }
+
+            & .form-sub {
+                font: var(--paragraph-large);
+                color: var(--content-secondary);
+            }
+        }
+
+        & .sort-form {
+            & .form-fields {
+                display: flex;
+                gap: 1.25rem;
+                margin-bottom: 1.25rem;
+
+                & .input-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: .5rem;
+
+                    & label {
+                        font: var(--label-medium);
+                        color: var(--content-secondary);
+
+                        &:hover {
+                            color: var(--content-brand);
+                        }
+                    }
+
+                    & input {
+                        all: unset;
+                        width: 105px;
+                        min-width: 105px;
+                        max-width: 105px;
+                        height: 56px;
+                        border-radius: .5rem;
+                        background-color: var(--bg-secondary);
+                        text-align: center;
+                        font: var(--display-small);
+                        color: var(--content-primary);
+                        border: 2px solid transparent;
+
+                        &:hover {
+                            background:
+                                linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+                                var(--gradient-border) border-box;
+                        }
+
+                        &:focus {
+                            border: 2px solid transparent;
+                            background:
+                                linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+                                var(--gradient-border) border-box;
+                        }
+                    }
+                }
+            }
+
+            & .toggle-switch {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                margin-bottom: 2.5rem;
+
+                & p {
+                    font: var(--paragraph-small);
+                    color: var(--content-primary);
+                }
+
+                /* Container do toggle switch */
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 30px;
+                    height: 20px;
+                }
+
+                /* Esconde o checkbox real */
+                .switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+
+                /* Estilo do slider (parte visível do toggle) */
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: var(--content-tertiary);
+                    transition: 0.4s;
+                    border-radius: 34px;
+                    transition: .4s;
+                }
+
+                /* O "ball" que se move no slider */
+                .slider:before {
+                    content: "";
+                    position: absolute;
+                    height: 14px;
+                    width: 14px;
+                    border-radius: 50%;
+                    left: 4px;
+                    bottom: 2.5px;
+                    background-color: var(--content-primary);
+                    transition: 0.4s;
+                }
+
+                /* Quando o checkbox está marcado */
+                input:checked+.slider {
+                    background: var(--gradient-background);
+                }
+
+                /* Quando o checkbox está marcado, mova o "ball" para a direita */
+                input:checked+.slider:before {
+                    transform: translateX(8px);
+                }
+            }
+
+            & .btn-submit {
+                all: unset;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+                background-color: var(--bg-tertiary);
+                border-radius: .5rem;
+                width: 100%;
+                font: var(--label-small);
+                color: var(--content-primary);
+                padding: 1rem 1rem;
+                border: 2px solid transparent;
+
+                &:hover {
+                    background:
+                        linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box,
+                        var(--gradient-border) border-box;
+                }
             }
         }
     }

@@ -27,24 +27,67 @@
                 <div class="question-item">
                     <div class="question-title">
                         <img src="./img/user.svg" alt="icone de usuario">
-                        <p>Como funciona o sorteador de números?</p>
                     </div>
-                    <p class="answer">O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+                    <div>
+                        <p class="question">Como funciona o sorteador de números?</p>
+                        <p class="answer">O sorteador utiliza um algoritmo de geração aleatória para criar números
+                            dentro do intervalo especificado pelo usuário.</p>
+                    </div>
                 </div>
 
                 <div class="question-item">
                     <div class="question-title">
                         <img src="./img/user.svg" alt="icone de usuario">
-                        <p>Como funciona o sorteador de números?</p>
                     </div>
-                    <p class="answer">O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+                    <div>
+                        <p class="question">Posso escolher o intervalo dos números?</p>
+                        <p class="answer">Sim, você pode definir os valores mínimo e máximo para o intervalo dos números
+                            sorteados.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="app-form">
+            <div class="title-wrap">
+                <h2 class="form-title">QUERO SORTEAR:</h2>
+                <p class="form-sub">defina o intervalo e a quantidade de números, clique em "Sortear" e veja os
+                    resultados na tela. É rápido e fácil!</p>
+            </div>
 
+            <form class="sort-form">
+                <div class="form-fields">
+                    <div class="input-item">
+                        <label for="number">NÚMEROS</label>
+                        <input type="text" id="number" name="number" required>
+                    </div>
+
+                    <div class="input-item">
+                        <label for="from">DE</label>
+                        <input type="text" id="from" name="from" required>
+                    </div>
+
+                    <div class="input-item">
+                        <label for="to">ATÉ</label>
+                        <input type="text" id="to" name="to" required>
+                    </div>
+                </div>
+
+                <div class="toggle-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="toggle" checked />
+                        <span class="slider"></span>
+                    </label>
+                    <p>Não repetir número</p>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span>SORTEAR</span>
+                    <img src="./img/arrow.svg">
+                </button>
         </div>
+        </form>
+    </div>
     </div>
 </body>
 
