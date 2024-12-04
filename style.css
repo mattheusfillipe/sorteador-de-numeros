@@ -21,23 +21,94 @@
     --accent-red: #E9A9B3;
 
     /* Gradient */
-    --gradient-border: linear-gradient(90deg, #77C0A 6%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+    --gradient-border: linear-gradient(90deg, #77C0AF 6%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
     --gradient-background: linear-gradient(90deg, #D586E0 0%, #91A1FA 98.93%);
     --gradient-content: linear-gradient(90deg, #C7C9CC 0%, #3D3D3D 100%);
 
     /* Font Styles Sora */
-    --display-large: 'Sora', sans-serif, 4.5rem/130%, 800, uppercase;
-    --display-medium: 'Sora', sans-serif, 2.5rem/130%, 800, uppercase;
-    --display-small: 'Sora', sans-serif, 2rem/130%, 700, uppercase;
+    --display-large: 800 4.5rem/1.3 'Sora', sans-serif, uppercase;
+    --display-medium: 800 2.5rem/1.3 'Sora', sans-serif, uppercase;
+    --display-small: 700 2rem/1.3 'Sora', sans-serif, uppercase;
 
     /* Font Styles Roboto Mono */
-    --overline: 'Roboto Mono', monospace, 1rem/150%, 700, uppercase;
+    --overline: 700 1rem/1.5 'Roboto Mono', monospace, uppercase;
 
     /* Font Styles Roboto Flex */
-    --paragraph-large: 'Roboto Flex', sans-serif, 1rem/150%, 500;
-    --paragraph-medium: 'Roboto Flex', sans-serif, 0.875rem/150%, 500;
-    --paragraph-small: 'Roboto Flex', sans-serif, 0.75rem/150%, 500;
-    --label-medium: 'Roboto Flex', sans-serif, 1.25rem/150%, 700;
-    --label-small: 'Roboto Flex', sans-serif, 1rem/150%, 700;
+    --paragraph-large: 500 1rem/1.5 'Roboto Flex', sans-serif;
+    --paragraph-medium: 500 0.875rem/1.5 'Roboto Flex', sans-serif;
+    --paragraph-small: 500 0.75rem/1.5 'Roboto Flex', sans-serif;
+    --label-medium: 700 1.25rem/1.5 'Roboto Flex', sans-serif;
+    --label-small: 700 1rem/1.5 'Roboto Flex', sans-serif;
 
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6)), url(./img/bg.png);
+    background-color: #000;
+}
+
+.logo {
+    margin: 4.75rem auto 5.625rem 7.5rem;
+}
+
+.container {
+    margin-left: 7.5rem;
+
+    .app-info {
+        header {
+            max-width: 510px;
+            margin-bottom: 2.25rem;
+
+            p {
+                font: var(--overline);
+                background-image: var(--gradient-content);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                margin-bottom: .75rem;
+            }
+
+            h1 {
+                font: var(--display-large);
+                color: var(--content-primary);
+            }
+        }
+
+        .questions {
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 2.25rem;
+
+            & .question-item {
+                display: flex;
+                flex-direction: column;
+            }
+
+            & .question-title {
+                font: var(--paragraph-medium);
+                color: var(--content-brand);
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+
+                & img {
+                    width: 1.25rem;
+                    height: 1.25rem;
+                }
+            }
+
+            & .answer {
+                margin-left: 2rem;
+                font: var(--paragraph-small);
+                color: var(--content-secondary);
+            }
+        }
+    }
 }
