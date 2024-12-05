@@ -1,4 +1,11 @@
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 :root {
+
     /* Content */
     --content-primary: #FFFFFF;
     --content-secondary: #C7C9CC;
@@ -137,7 +144,7 @@ body {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
+
             & h2 {
                 font: var(--label-medium);
                 color: var(--content-primary);
@@ -159,6 +166,7 @@ body {
 
             & .btn-reset {
                 all: unset;
+                position: relative;
                 box-sizing: border-box;
                 display: flex;
                 justify-content: center;
@@ -170,19 +178,39 @@ body {
                 font: var(--label-small);
                 color: var(--content-primary);
                 padding: 1rem 1rem;
-                border: 2px solid transparent;
                 cursor: pointer;
                 margin-top: 2.5rem;
+                transition: background-color .4s ease;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    translate: -50% -50%;
+                    border-radius: 8px;
+                    background-image: conic-gradient(from var(--angle), #77C0AF 6%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%, #77C0AF 100%);
+                    z-index: -1;
+                    padding: 2px;
+                    opacity: 0;
+                    animation: 3s spin linear infinite;
+                    transition: opacity .4s ease;
+                }
+
+                &:hover {
+                    background-color: var(--bg-secondary);
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                }
 
                 & span {
                     margin: 0;
                 }
 
-                &:hover {
-                    background:
-                        linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
-                        var(--gradient-border) border-box;
-                }
             }
         }
 
@@ -219,14 +247,53 @@ body {
                         font: var(--label-medium);
                         color: var(--content-secondary);
                         transition: color .3s ease-in-out;
+                    }
 
-                        &:hover {
-                            color: var(--content-brand);
+                    .wrapper:focus-within+label {
+                        color: var(--content-brand);
+                    }
+
+                    .wrapper:hover+label {
+                        color: var(--content-brand);
+                    }
+
+                    .wrapper {
+                        position: relative;
+                        width: 105px;
+                        max-width: 105px;
+                        height: 56px;
+                        border-radius: .5rem;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 100%;
+                            height: 100%;
+                            translate: -50% -50%;
+                            border-radius: 8px;
+                            background-image: conic-gradient(from var(--angle), #77C0AF 6%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%, #77C0AF 100%);
+                            z-index: -1;
+                            padding: 1.5px;
+                            opacity: 0;
+                            animation: 3s spin linear infinite;
+                            transition: opacity .4s ease;
+                        }
+
+                        &:hover::before {
+                            opacity: 1;
+                        }
+
+                        &:focus-within::before {
+                            padding: 2px;
+                            opacity: 1;
                         }
                     }
 
                     & input {
                         all: unset;
+                        position: relative;
                         width: 105px;
                         max-width: 105px;
                         height: 56px;
@@ -235,19 +302,10 @@ body {
                         text-align: center;
                         font: var(--display-small);
                         color: var(--content-primary);
-                        border: 2px solid transparent;
+                        transition: background-color .4s ease;
 
                         &:hover {
-                            background:
-                                linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box,
-                                var(--gradient-border) border-box;
-                        }
-
-                        &:focus {
-                            border: 2px solid transparent;
-                            background:
-                                linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box,
-                                var(--gradient-border) border-box;
+                            background-color: var(--bg-tertiary);
                         }
                     }
                 }
@@ -319,6 +377,7 @@ body {
 
             & .btn-submit {
                 all: unset;
+                position: relative;
                 box-sizing: border-box;
                 display: flex;
                 justify-content: center;
@@ -330,13 +389,32 @@ body {
                 font: var(--label-small);
                 color: var(--content-primary);
                 padding: 1rem 1rem;
-                border: 2px solid transparent;
                 cursor: pointer;
+                transition: background-color .4s ease;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    translate: -50% -50%;
+                    border-radius: 8px;
+                    background-image: conic-gradient(from var(--angle), #77C0AF 6%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%, #77C0AF 100%);
+                    z-index: -1;
+                    padding: 2px;
+                    opacity: 0;
+                    animation: 3s spin linear infinite;
+                    transition: opacity .4s ease;
+                }
 
                 &:hover {
-                    background:
-                        linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
-                        var(--gradient-border) border-box;
+                    background-color: var(--bg-secondary);
+                }
+
+                &:hover::before {
+                    opacity: 1;
                 }
             }
         }
@@ -367,6 +445,7 @@ body {
                 max-width: 300px;
                 min-width: 300px;
                 margin-bottom: 1rem;
+
                 & h1 {
                     font: var(--display-medium);
                 }
@@ -407,5 +486,15 @@ body {
             }
         }
 
+    }
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
     }
 }
